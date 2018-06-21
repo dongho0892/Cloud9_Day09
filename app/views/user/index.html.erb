@@ -1,0 +1,28 @@
+<%= link_to "회원가입", "/sign_up" %> 
+
+<ul>
+    <% @users.each do |user| %>
+    <li><%= link_to user.u_id, "user/#{user.id}" %></li>
+    <% end %>
+    
+</ul>
+
+<!--<#% if @current_user.nil? %>  / 아래 것이 헬퍼 사용 한 것  -->
+<% unless user_signed_in? %>
+    <!-- 로그인이 안된 상태 -->
+    <%= link_to "로그인", "/sign_in" %>
+<% else %>
+    <!--로그인이 된 상태-->
+    <p> 현재 로그인된 유저 : <%= @current_user.u_id %></p>
+    <%= link_to "로그아웃", "/logout" %>
+<% end %>
+
+    <!--<@% if @login_user.nil? %>-->
+    <!--<p> 현재 로그인 된 유저가 없습니다.</p>-->
+    <!--<@%= link_to '로그인', '/sign_in' %>-->
+    <!--<@% else %>-->
+    <!--<p> 현재 로그인 된 유저 : <@%= @login_user.u_id %> </p>-->
+    <!--<@% end %>-->
+
+<!--    <#% flash.each do |k,v| %>-->
+<!--     <p> <#%= v %> </p> 내용 추가 함. layout/application.html.erb  -->

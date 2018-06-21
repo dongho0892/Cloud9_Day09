@@ -1,0 +1,6 @@
+<%= form_tag("/users", method: "POST") do %>
+    <%= text_field_tag(:user_id) %>
+    <%= password_field_tag(:password) %>
+        <!--<#%= text_field_tag(:password2) %>-->
+    <%= submit_tag("가입하기") %>
+<% end %>

@@ -1,0 +1,10 @@
+<h2> 아이디 : <%= @user.u_id %> </h2>
+<h4> Last Login at : <%= @user.ip_address %>  </h4>
+
+<h4> 유저가 작성한 글 </h4>
+<% @user.posts.each do |post| %>
+    <%= link_to post.title, "/board/#{post.id}" %> <br>
+<% end %>
+<br>
+<br>
+<%= link_to "메인화면으로 가기", "/users" %>

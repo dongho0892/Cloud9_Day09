@@ -1,0 +1,22 @@
+<%= form_tag("/boards", method: "POST") do %>
+                <!--토큰 만들 필요가 없어짐-->
+    <%= text_field_tag(:title) %>
+                <!--http://guides.rubyonrails.org/form_helpers.html-->
+    <%= text_area_tag(:contents) %>
+    <%= submit_tag("작성하기") %>
+<% end %>
+
+
+
+<!--<#%= form_tag("/search", method: "get") do %>-->
+<!--  <#%= label_tag(:q, "Search for:") %>-->
+<!--  <#%= text_field_tag(:q) %>-->
+<!--  <#%= submit_tag("Search") %>-->
+<!--<#% end %>-->
+
+<!--<form accept-charset="UTF-8" action="/search" method="get">-->
+<!--  <input name="utf8" type="hidden" value="&#x2713;" />-->
+<!--  <label for="q">Search for:</label>-->
+<!--  <input id="q" name="q" type="text" />-->
+<!--  <input name="commit" type="submit" value="Search" />-->
+<!--</form>-->

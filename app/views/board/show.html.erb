@@ -1,0 +1,21 @@
+
+<h2> <%= @post.title %> </h2>
+<hr>
+<p> <%= @post.contents %></p>       
+
+<!--내용물 보여주기 위한 작업 -->
+
+<!--    이름으로 들어감 url -->
+
+<p> 작성자 : <%= @post.user.u_id %> </p>
+
+<%= link_to "목록", "/" %>
+<%= link_to "수정", "/board/#{@post.id}/edit" %>
+<%= link_to "삭제", "/board/#{@post.id}", method: "delete" %>
+
+<% @user.posts.each do |post| %>
+    <%= link_to post.title, "/board/#{post.id}" %> <br>
+<% end %>
+
+
+<!--# '/board/:id'는 어디로 갈 것 인가..?  위의 처럼 method: "방식" 으로 써주면 됨!-->
